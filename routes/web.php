@@ -11,8 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-Route::get('/login', 'PagesController@index');
+Route::get('/', 'PagesController@index');
 
+Route::get('/logged', 'PagesController@storekeeper');

@@ -1,5 +1,6 @@
 @extends('layouts.pageLayout')
 
+<?php $logged = false ?>
 @section('content')
     <div class="login-form">
         <form action="" method="post">
