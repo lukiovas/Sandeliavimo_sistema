@@ -23,7 +23,7 @@
                     <td>{{$product->description}}</td>
                      <td>{{$product->unit_price}}</td>
                      <td>{{$product->quantity}}</td> 
-                <td><a href="/Sandeliavimo_sistema/public/products/{{$product->product_id}}">Edit</a></td> 
+                <td><a class="btn " href="/Sandeliavimo_sistema/public/products/{{$product->product_id}}">Edit</a></td> 
                 </tr>          
         @endforeach      
     </div>
@@ -34,5 +34,5 @@
     @else
         <p>No products found</p>
     @endif
-    <a href="/Sandeliavimo_sistema/public/products/create">Create new product</a>
+    <a class="btn " href="/Sandeliavimo_sistema/public/products/create">Create new product</a>
 @endsection
