@@ -12,5 +12,9 @@
 */
 
 Route::get('/', 'PagesController@index');
-
 Route::get('/logged', 'PagesController@storekeeper');
+
+Route::resource('products','ProductsController');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
