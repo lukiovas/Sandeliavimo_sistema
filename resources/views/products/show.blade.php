@@ -36,6 +36,7 @@
             </table>   
             {{Form::hidden('_method','PUT')}}
             {{ Form::submit('Edit product', ['class'=>'btn btn-primary'])}}
+            {!! Form::close() !!}
             {!! Form::open(['action' => ['ProductsController@destroy' , $product->product_id], 'method' => 'POST' , "class" => "form"]) !!}
                 {{Form::hidden('_method', 'DELETE')}}
                 {{Form::submit('Remove', ['class' => 'btn btn-primary'])}}
