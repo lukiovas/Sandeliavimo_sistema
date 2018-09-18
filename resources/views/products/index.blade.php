@@ -11,7 +11,6 @@
                 <th>Description</th>
                 <th>Unit Price / Eur</th>
                 <th>Quantity</th>
-                <th></th>
             </tr>
     @if (count($products) >= 1)
     <div class="well">
@@ -23,7 +22,7 @@
                     <td>{{$product->description}}</td>
                      <td>{{$product->unit_price}}</td>
                      <td>{{$product->quantity}}</td> 
-                <td><a class="btn " href="/Sandeliavimo_sistema/public/products/{{$product->product_id}}">Edit</a></td> 
+                <td><a href="/Sandeliavimo_sistema/public/products/{{$product->product_id}}">Add / Take</a></td> 
                 </tr>          
         @endforeach      
     </div>
@@ -34,5 +33,4 @@
     @else
         <p>No products found</p>
     @endif
-    <a class="btn " href="/Sandeliavimo_sistema/public/products/create">Create new product</a>
 @endsection
