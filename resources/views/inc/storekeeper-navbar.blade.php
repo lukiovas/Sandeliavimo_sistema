@@ -24,21 +24,22 @@
                         <li class="nav-link">
                             <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
                         </li>
-                    @else
-                        <li class=" nav-link"><a class=" nav-link" href="/Sandeliavimo_sistema/public/products">Products list</a></li>
-                        <li class=" nav-link"><a class=" nav-link" href="#">Assign consignment
-                            to employee</a></li>
-                        <li class="nav-link dropdown">
-                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                {{ Auth::user()->name }} <span class="caret"></span>
-                            </a>
-
-                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="{{ route('logout') }}"
-                                   onclick="event.preventDefault();
-                                                 document.getElementById('logout-form').submit();">
-                                    {{ __('Logout') }}
+                    @else   
+                        
+                            <li class=" nav-link"><a class=" nav-link" href="/Sandeliavimo_sistema/public/products">Products list</a></li>
+                            <li class=" nav-link"><a class=" nav-link" href="/Sandeliavimo_sistema/public/orders">Make an order</a></li>
+                            <li class="nav-link dropdown">
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
+                        
+
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                    onclick="event.preventDefault();
+                                                    document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }}
+                                    </a>
 
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                     @csrf

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddAdminStatusToUser extends Migration
+class CreateOrdersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,12 @@ class AddAdminStatusToUser extends Migration
      */
     public function up()
     {
-        Schema::table('users', function($table) {
-            $table->boolean('admin')->default(0);
+        Schema::create('orders', function (Blueprint $table) {
+            $table->integer('order_id');
+            $table->string('order_date');
+            $table->string('customer_id');
+            $table->string('employee_id');
+            $table->timestamps();
         });
     }
 
@@ -25,8 +29,7 @@ class AddAdminStatusToUser extends Migration
      */
     public function down()
     {
-        Schema::table('users', function($table){
-            $table->dropColumn('admin');
-        });
+        Schema::dropIfExists('orders');
     }
+    
 }

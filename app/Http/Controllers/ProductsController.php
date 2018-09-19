@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Product;
+use Auth;
 use DB;
 
 class ProductsController extends Controller
@@ -65,6 +66,7 @@ class ProductsController extends Controller
             $product->unit_price = $request->input('unit_price');
             $product->quantity = $request->input('quantity');
             $product->category_id = $request->input('category_id');
+            $product->user_id = Auth::user()->id;
             $product->save();
 
             return redirect('/products')->with('success' , 'Product created');
@@ -111,7 +113,7 @@ class ProductsController extends Controller
             'category_id' => 'required',
         ]);
 
-        // Create new product
+        // Update product
             $product = Product::find($id);
         
             $product->product_code = $request->input('product_code');

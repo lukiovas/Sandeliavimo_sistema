@@ -1,5 +1,5 @@
 @extends ('layouts.app')
-<?php $logged = true; ?>
+
 
 @section ('content')
     <a class="btn btn-default" href="/Sandeliavimo_sistema/public/products">Go back</a>
