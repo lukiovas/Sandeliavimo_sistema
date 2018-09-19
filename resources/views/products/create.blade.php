@@ -1,10 +1,11 @@
-@extends ('layouts.pageLayout')
-<?php $logged = true; ?>
+@extends ('layouts.app')
+
 
 @section ('content')
     <a class="btn btn-default" href="/Sandeliavimo_sistema/public/products">Go back</a>
     <h1>New product</h1>
     <table class="table">
+            
             <tr>
                 <th>ID</th>
                 <th>Product Code</th>
@@ -14,11 +15,10 @@
                 <th>Quantity</th>
                 <th>Category id</th>
             </tr>
+            <div class="form-group">
             
-            
-    </div>
     {!! Form::open(['action' => 'ProductsController@store', 'method' => 'POST' , "class" => "form"]) !!}
-        <div class="form-group">
+ 
             <tr>
                     <td>    {{Form::text('product_id', '', ['class' => 'form-control', 'placeholder' =>'Product id'])}}
                         </td> 
@@ -35,9 +35,15 @@
                     <td>    {{Form::text('category_id', '', ['class' => 'form-control', 'placeholder' =>'Category id'])}}
                         </td>
             </tr>
-            </table>   
-            {{ Form::submit('Create product', ['class'=>'brn btn-primary'])}}
-        </div>
-        {!! Form::close() !!}
+            
+              </div>
+        </table> 
+        {{-- {{ $user_id = DB::table('users')->select('id')->get() }}
+            {{DB::table('products')->insert(
+               'user_id' => $user_id 
+            )}} --}}
+        {{ Form::submit('Create product', ['class'=>'btn btn-primary'])}}
+            {!! Form::close() !!}
+        
     
 @endsection

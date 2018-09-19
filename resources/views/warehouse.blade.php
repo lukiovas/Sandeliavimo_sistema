@@ -24,7 +24,6 @@
                                     <th>Quantity</th>
                                     <th></th>
                              </tr>
-                   
                         @if(count($products) >0)
                              @foreach($products as $product)
                              <tr>
@@ -32,13 +31,12 @@
                                     <td>{{$product->product_code}}</td>
                                     <td>{{$product->product_name}}</td>
                                     <td>{{$product->description}}</td>
-                                    <td>{{$product->unit_price}}</td>
-                                    <td>{{$product->quantity}}</td> 
-                                    <td><a href="/Sandeliavimo_sistema/public/products/{{$product->product_id}}" class="btn btn-default"> View product</a></td>
-                            </tr>
+                                     <td>{{$product->unit_price}}</td>
+                                     <td>{{$product->quantity}}</td> 
+                             <td><a href="/Sandeliavimo_sistema/public/products/{{$product->product_id}}" class="btn btn-default"> View product</a></td>
+                             </tr>
                              @endforeach
                          @endif
-                    
                     </table>
         </div>
     </div>

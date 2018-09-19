@@ -1,4 +1,4 @@
-@extends ('layouts.pageLayout')
+@extends ('layouts.app')
 <?php $logged = true; ?>
 
 @section ('content')

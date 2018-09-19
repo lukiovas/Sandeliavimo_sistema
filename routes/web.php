@@ -13,10 +13,9 @@
 
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/logged', 'PagesController@storekeeper');
+Route::get('/storekeeper', 'PagesController@storekeeper');
 
 Route::resource('products','ProductsController');
 Auth::routes();
-
 
 

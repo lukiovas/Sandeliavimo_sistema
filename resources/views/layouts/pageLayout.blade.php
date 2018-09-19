@@ -12,11 +12,9 @@
 </style>
 </head>
 <body>
-    
-    @if($logged ==true)
 
         @include ('inc.storekeeper-navbar')
-    @endif
+
     <div class="container">
         @include('inc.messages')
         @yield('content')
