@@ -21,7 +21,7 @@
                         </td>
                     <td>    {{Form::text('customer_id', $order->customer_id, ['class' => 'form-control', 'placeholder' =>'Customer ID'])}}
                         </td>
-                    <td>    {{Form::select('employee_id', DB::table('users')->distinct()->get() , ['class' => 'form-control', 'placeholder' =>'Employee ID'])}}
+                    <td>    {{Form::select('employee_id', DB::table('users')->distinct()->pluck('name','id')->toArray() , ['class' => 'form-control', 'placeholder' =>'Employee ID'])}}
                         </td>
             </tr>
             </table>   

@@ -17,13 +17,13 @@
     {!! Form::open(['action' => 'OrdersController@store', 'method' => 'POST' , "class" => "form"]) !!}
  
             <tr>
-                    <td>     {{Form::text('order_id', $order->order_id, ['class' => 'form-control', 'placeholder' =>'Order ID'])}}
+                    <td>     {{Form::text('order_id', '', ['class' => 'form-control', 'placeholder' =>'Order ID'])}}
                         </td> 
-                    <td>    {{Form::text('order_date', $order->order_date, ['class' => 'form-control', 'placeholder' =>'Order date'])}}
+                    <td>    {{Form::text('order_date', '', ['class' => 'form-control', 'placeholder' =>'Order date'])}}
                         </td>
-                    <td>    {{Form::text('customer_id', $order->customer_id, ['class' => 'form-control', 'placeholder' =>'Customer ID'])}}
+                    <td>    {{Form::text('customer_id', '', ['class' => 'form-control', 'placeholder' =>'Customer ID'])}}
                         </td>
-                    <td>    {{Form::select('employee_id', DB::table('users')->distinct()->get() , ['class' => 'form-control', 'placeholder' =>'Employee ID'])}}
+                    <td>    {{Form::select('employee_id', DB::table('users')->distinct()->pluck('name','id')->toArray() , ['class' => 'form-control', 'placeholder' =>'Employee ID'])}}
                         </td>
             </tr>
             

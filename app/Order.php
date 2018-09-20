@@ -8,5 +8,11 @@ class Order extends Model
 {
     protected $table = 'orders';
 
+    public $primaryKey = 'order_id';
+
     public $timestamps = true;
+
+    public function user() {
+        return $this->belongsTo('App\User');
+    }
 }

@@ -45,7 +45,7 @@ class OrdersController extends Controller
         $order = New Order();
         
             $order->order_id = $request->input('order_id');
-            $order->order_date = time()->get();
+            $order->order_date = time();
             $order->customer_id = $request->input('customer_id');
             $order->employee_id = $request->input('employee_id');
             $order->save();
@@ -88,10 +88,9 @@ class OrdersController extends Controller
     {
 
         // Update product
-        $order = New Order();
+        $order = Order::find($id);
         
-        $order->order_id = $request->input('order_id');
-        $order->order_date = time()->get();
+        $order->order_date = time();
         $order->customer_id = $request->input('customer_id');
         $order->employee_id = $request->input('employee_id');
         $order->save();

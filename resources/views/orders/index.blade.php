@@ -16,10 +16,10 @@
         @foreach($orders as $order)
                         <tr>
                             <td>{{$order->order_id}}</td> 
-                            <td>{{$product->order_date}}</td>
-                            <td>{{$product->customer_id}}</td>
-                            <td>{{$product->employee_id}}</td>
-                        <td><a href="/Sandeliavimo_sistema/public/orders/{{$product->product_id}}">Order info</a></td>   
+                            <td>{{$order->order_date}}</td>
+                            <td>{{$order->customer_id}}</td>
+                            <td>{{$order->employee_id}}</td>
+                        <td><a href="/Sandeliavimo_sistema/public/orders/{{$order->order_id}}">Order info</a></td>   
                     </tr>          
         @endforeach      
     </div>
