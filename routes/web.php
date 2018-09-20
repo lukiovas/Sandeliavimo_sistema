@@ -18,4 +18,4 @@ Route::get('/storekeeper', 'PagesController@storekeeper');
 Route::resource('products','ProductsController');
 Auth::routes();
 
-
+Route::resource('orders','OrdersController');
