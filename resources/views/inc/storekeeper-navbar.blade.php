@@ -27,7 +27,7 @@
                     @else   
                         
                             <li class=" nav-link"><a class=" nav-link" href="/Sandeliavimo_sistema/public/products">Products list</a></li>
-                            <li class=" nav-link"><a class=" nav-link" href="/Sandeliavimo_sistema/public/orders">Make an order</a></li>
+                            <li class=" nav-link"><a class=" nav-link" href="/Sandeliavimo_sistema/public/orders">Orders list</a></li>
                             <li class="nav-link dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }} <span class="caret"></span>

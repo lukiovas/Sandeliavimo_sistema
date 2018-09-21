@@ -9,6 +9,7 @@
                 <th>Order date</th>
                 <th>Customer ID</th>
                 <th>Empoyee ID</th>
+                <th></th>
 
             </tr>
     
