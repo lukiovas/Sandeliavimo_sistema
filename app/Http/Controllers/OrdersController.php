@@ -90,7 +90,7 @@ class OrdersController extends Controller
         // Update product
         $order = Order::find($id);
         
-        $order->order_date = time();
+        $order->order_date = $request->input('order_date');
         $order->customer_id = $request->input('customer_id');
         $order->employee_id = $request->input('employee_id');
         $order->save();

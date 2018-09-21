@@ -15,11 +15,11 @@
             <div class="form-group">
             
     {!! Form::open(['action' => 'OrdersController@store', 'method' => 'POST' , "class" => "form"]) !!}
- 
+
             <tr>
-                    <td>     {{Form::text('order_id', '', ['class' => 'form-control', 'placeholder' =>'Order ID'])}}
+                    <td>    {{Form::text('order_id', '', ['class' => 'form-control', 'placeholder' =>'Order ID'])}}
                         </td> 
-                    <td>    {{Form::text('order_date', '', ['class' => 'form-control', 'placeholder' =>'Order date'])}}
+                    <td>    {{Form::date('order_date', \Carbon\Carbon::now(), ['class' => 'form-control', 'placeholder' =>'Order date'])}}
                         </td>
                     <td>    {{Form::text('customer_id', '', ['class' => 'form-control', 'placeholder' =>'Customer ID'])}}
                         </td>

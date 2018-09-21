@@ -17,7 +17,7 @@
             <tr>
                     <td>     <p>{{$order->order_id}}</p>
                         </td> 
-                    <td>    {{Form::text('order_date', $order->order_date, ['class' => 'form-control', 'placeholder' =>'Order date'])}}
+                    <td>    {{Form::date('order_date', \Carbon\Carbon::createFromFormat('Y-m-d', $order->order_date) , ['class' => 'form-control', 'placeholder' =>'Order date'])}}
                         </td>
                     <td>    {{Form::text('customer_id', $order->customer_id, ['class' => 'form-control', 'placeholder' =>'Customer ID'])}}
                         </td>
