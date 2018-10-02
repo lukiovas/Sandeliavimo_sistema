@@ -48,6 +48,7 @@ class OrdersController extends Controller
             $order->order_date = time();
             $order->customer_id = $request->input('customer_id');
             $order->employee_id = $request->input('employee_id');
+            $order->products = $request->input('products');
             $order->save();
 
             return redirect('/orders')->with('success' , 'Order created');
@@ -93,6 +94,7 @@ class OrdersController extends Controller
         $order->order_date = $request->input('order_date');
         $order->customer_id = $request->input('customer_id');
         $order->employee_id = $request->input('employee_id');
+        $order->products = $request->input('products');
         $order->save();
 
         return redirect('/orders')->with('success' , 'Order updated');

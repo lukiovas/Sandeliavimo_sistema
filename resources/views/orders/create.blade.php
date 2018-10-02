@@ -9,6 +9,7 @@
             <tr>
             <th>Order ID</th>
                 <th>Order date</th>
+                <th>Products</th>
                 <th>Customer ID</th>
                 <th>Empoyee ID</th>
             </tr>
@@ -21,15 +22,17 @@
                         </td> 
                     <td>    {{Form::date('order_date', \Carbon\Carbon::now(), ['class' => 'form-control', 'placeholder' =>'Order date'])}}
                         </td>
+                    <td>    {{Form::select('products', DB::table('products')->distinct()->pluck('product_name','product_id') , ['class' => 'form-control mdb-select md-form colorful-select dropdown-primary'], array('multiple' => true))}}
+                        </td>
                     <td>    {{Form::text('customer_id', '', ['class' => 'form-control', 'placeholder' =>'Customer ID'])}}
                         </td>
-                    <td>    {{Form::select('employee_id', DB::table('users')->distinct()->pluck('name','id')->toArray() , ['class' => 'form-control', 'placeholder' =>'Employee ID'])}}
+                    <td>    {{Form::select('employee_id', DB::table('users')->distinct()->pluck('name','id')->toArray() , ['class' => 'form-control'])}}
                         </td>
             </tr>
             
              
         </table> 
-        {{ Form::submit('Create Order', ['class'=>'btn btn-primary'])}}
+        {{ Form::submit('Create Order', ['class'=>'btn-save btn btn-primary btn-sm'])}}
             {!! Form::close() !!}
          </div>
     
