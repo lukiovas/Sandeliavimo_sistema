@@ -45,7 +45,7 @@ class OrdersController extends Controller
         $order = New Order();
         
             $order->order_id = $request->input('order_id');
-            $order->order_date = time();
+            $order->order_date = $request->input('order_date');
             $order->customer_id = $request->input('customer_id');
             $order->employee_id = $request->input('employee_id');
             $order->products = $request->input('products');
