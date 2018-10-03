@@ -39,6 +39,7 @@ class OrdersController extends Controller
         $this->validate($request, [
             'order_id' => 'required',
             'order_date' => 'required',
+            'products' => 'required',
         ]);
 
         // Create new product
